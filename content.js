@@ -14,6 +14,7 @@ async function loadPublishedContent(container) {
     if (!response.ok) throw new Error('Content is temporarily unavailable.');
     const payload = await response.json();
     if (!payload.items.length) return;
+    if (type === 'event') document.querySelector('.page-content > .notice-panel')?.remove();
     const section = make('section', 'cms-content-section');
     const title = make('h2', '', container.dataset.cmsTitle || `Latest ${type}s`);
     const grid = make('div', 'cms-content-grid');
