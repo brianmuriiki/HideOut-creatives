@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 180" role="img" aria-labelledby="title desc">
+  <title id="title">HideOut Creatives logo</title>
+  <desc id="desc">A modern technology company logo for HideOut Creatives</desc>
+
+  <g transform="translate(20 20)">
+    <path d="M70 0 L130 35 L130 105 L70 140 L10 105 L10 35 Z" fill="none" stroke="#17212B" stroke-width="10" stroke-linejoin="round" />
+    <path d="M42 86 L42 54 L70 38 L98 54 L98 86" fill="none" stroke="#18C7D4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="70" cy="101" r="8" fill="#FF6B4A" />
+  </g>
+
+  <text x="180" y="91" fill="#17212B" font-family="Inter, Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="-2">HideOut</text>
+  <text x="185" y="133" fill="#18C7D4" font-family="Inter, Arial, Helvetica, sans-serif" font-size="27" font-weight="500" letter-spacing="4">CREATIVES</text>
+</svg>

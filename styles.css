@@ -23,7 +23,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .site-header { height: 84px; max-width: 1440px; margin: auto; padding: 0 7.1%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(29,44,37,.08); position: relative; z-index: 5; }
 .wordmark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-size: 18px; line-height: 1; font-weight: 800; letter-spacing: -1.1px; }
-.wordmark img { width: 38px; height: 38px; }
+.wordmark img { width: 205px; height: auto; }
 .wordmark-light { font-weight: 500; color: #727b70; }
 .site-nav { display: flex; align-items: center; gap: 39px; font-size: 12px; font-weight: 600; color: #616b61; }
 .site-nav a { transition: color .2s ease; }
@@ -170,7 +170,7 @@ h2 { margin-bottom: 0; font-family: var(--display); font-size: clamp(33px, 4vw, 
 .principle-grid p { max-width: 250px; margin: 0; color: #7b8178; font-size: 10px; line-height: 1.8; }
 
 .site-footer { min-height: 99px; padding: 20px 7.1%; display: flex; align-items: center; border-top: 1px solid var(--line); }
-.footer-wordmark { font-size: 15px; }.footer-wordmark img { width: 34px; height: 34px; }
+.footer-wordmark { font-size: 15px; }.footer-wordmark img { width: 180px; height: auto; }
 .footer-note { margin-left: auto; color: #7b8178; font-family: Georgia, serif; font-size: 12px; font-style: italic; }
 .footer-copy { margin-left: 55px; color: #888e84; font: 500 7px var(--mono); letter-spacing: .7px; }
 
@@ -181,7 +181,7 @@ h2 { margin-bottom: 0; font-family: var(--display); font-size: clamp(33px, 4vw, 
 }
 @media (max-width: 650px) {
   html { scroll-padding-top: 72px; }
-  .site-header { height: 70px; padding: 0 6%; }.wordmark { gap: 8px; font-size: 16px; }.wordmark img { width: 33px; height: 33px; }
+  .site-header { height: 70px; padding: 0 6%; }.wordmark { gap: 8px; font-size: 16px; }.wordmark img { width: 170px; height: auto; }
   .menu-toggle { width: 42px; height: 42px; padding: 12px 10px; display: flex; flex-direction: column; justify-content: center; gap: 5px; border: 1px solid var(--line); border-radius: 50%; background: transparent; }
   .menu-toggle span { display: block; width: 17px; height: 1px; background: var(--ink); transition: transform .2s ease; }
   .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3px) rotate(45deg); }.menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3px) rotate(-45deg); }
@@ -198,7 +198,7 @@ h2 { margin-bottom: 0; font-family: var(--display); font-size: clamp(33px, 4vw, 
   .product-visual { min-height: 300px; }.visual-card-main { top: 48px; left: 18%; width: 182px; min-height: 178px; padding: 17px; }.visual-card-main b { font-size: 25px; }.visual-card-float { right: 7%; bottom: 38px; }.visual-asterisk { top: 20px; left: 9%; }.future-row { gap: 14px; }.future-row p { font-size: 9px; }.future-row strong { font-size: 10px; }
   .studio-inner { min-height: auto; padding-top: 70px; padding-bottom: 70px; grid-template-columns: 1fr auto; gap: 23px 16px; }.studio-symbol { grid-column: 1 / -1; width: 72px; height: 72px; font-size: 35px; letter-spacing: -5px; }.studio-symbol span { font-size: 22px; }.studio-copy { grid-column: 1; }.studio-copy .eyebrow { margin-bottom: 12px; }.studio-copy h2 { font-size: 32px; letter-spacing: -1.8px; }.studio-copy > p:not(.eyebrow) { margin-top: 15px; font-size: 10px; }.studio-aside { grid-column: 2; grid-row: 2; align-self: end; gap: 10px; font-size: 6px; }.studio-copy .text-link { margin-top: 19px; }
   .principles { padding-top: 69px; padding-bottom: 68px; }.principle-grid { grid-template-columns: 1fr; }.principle-grid article, .principle-grid article + article { min-height: 0; padding: 17px 0 18px; border-left: 0; border-bottom: 1px solid var(--line); }.principle-grid h3 { margin: 9px 0 4px; font-size: 14px; }.principle-grid p { max-width: 340px; font-size: 9px; }
-  .site-footer { min-height: 112px; padding: 18px 7%; flex-wrap: wrap; gap: 8px; }.footer-wordmark { font-size: 13px; }.footer-wordmark img { width: 30px; height: 30px; }.footer-note { margin-left: auto; font-size: 10px; }.footer-copy { width: 100%; margin: 1px 0 0 38px; font-size: 6px; }
+  .site-footer { min-height: 112px; padding: 18px 7%; flex-wrap: wrap; gap: 8px; }.footer-wordmark { font-size: 13px; }.footer-wordmark img { width: 150px; height: auto; }.footer-note { margin-left: auto; font-size: 10px; }.footer-copy { width: 100%; margin: 1px 0 0 38px; font-size: 6px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
