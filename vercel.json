@@ -4,8 +4,8 @@
   "outputDirectory": ".",
   "redirects": [
     {
-      "source": "/downloads/(.*)",
-      "destination": "https://github.com/brianmuriiki/HideOut-creatives/releases/latest/download/$1",
+      "source": "/downloads/:file",
+      "destination": "https://github.com/brianmuriiki/HideOut-creatives/releases/latest/download/:file",
       "permanent": false
     }
   ]
