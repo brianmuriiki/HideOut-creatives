@@ -1,43 +1,28 @@
-# HideOut Creatives website
+# HideOut Creatives
 
-A small static website for HideOut Creatives and its product lineup. It has no build step or runtime dependencies.
+HideOut Creatives is a React website built with Vite. The public pages, shared navigation, ratings, content listings, and private admin dashboard are React components. React Router keeps the existing public page URLs, including `.html` links.
 
-## Pages
+## Run locally
 
-- `index.html` — Home
-- `about.html`, `contacts.html`, `careers.html` — Company information
-- `apps.html` and `docs/digitracker.html` — Product catalogue and DIGITracker guide
-- `services.html`, `startups.html`, `innovation.html` — Studio work and initiatives
-- `blog.html`, `events.html`, `communities.html`, `ideas.html` — Editorial and community pages
-- `privacy.html` and `terms.html` — Legal pages; both are marked as drafts and need review before public launch
-- `admin/` — Private Google sign-in dashboard for aggregated site activity and published site content (requires backend deployment configuration)
+1. Install Node.js 20.19 or newer.
+2. Copy `.env.example` to `.env` if you need to override the API URL or public Google client ID.
+3. Run `npm install` and `npm run dev` from this directory.
+4. Open the local URL printed by Vite.
 
-The email and phone shown on the Contacts page are the public contact details provided by the company owner.
+Run `npm run build` to create the production site in `dist/`, or `npm run preview` to view that build locally.
 
 ## Website admin
 
-The admin dashboard is served at `/admin/`. It calls the DIGITracker backend at `https://digitracker-rq61.onrender.com` for authenticated content management and anonymous aggregate analytics. Access is restricted to `shadowhacktech@gmail.com`. To activate it, set `ADMIN_EMAILS=shadowhacktech@gmail.com`, add the exact Vercel `/admin/` redirect URI and site origin in the Render API environment, and add that redirect URI to the Google Web OAuth client. See `../backend/README.md` for the complete settings. The dashboard accepts an HTTPS image URL; direct file uploads need a separate object storage service.
+The dashboard is available at `/admin/`. It uses Google sign-in and the DIGITracker API at `https://digitracker-rq61.onrender.com`. Only `shadowhacktech@gmail.com` is allowlisted. Render and the Google Web OAuth client must include the live Vercel origin and exact `/admin/` redirect URI. See `../backend/README.md` for backend settings.
 
-Ratings submitted from the Apps, Startups, and Innovation pages are stored anonymously in MongoDB. Their average score and optional comments appear in the admin dashboard; records expire after one year.
+Admins can publish startups, innovations, events, blog posts, and apps. Images and related links use public HTTPS URLs; direct image uploads need a separate object storage service. Anonymous ratings from the Apps, Startups, and Innovation pages are stored in MongoDB and summarized in the dashboard. Rating records expire after one year.
 
-## Preview locally
-
-From this directory, run:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then open `http://localhost:8000` in a browser.
+The dashboard reports aggregate page views and APK download clicks; these are usage counts, not full uptime or Core Web Vitals monitoring. The privacy and terms pages are drafts and need review before public launch.
 
 ## Publish the Android APK
 
-The release APK is larger than Vercel's 100 MB Hobby static-file limit, so do not commit it to this repository. Upload it as a GitHub Release asset named `DIGITracker-latest.apk` instead. Individual GitHub Release assets can be up to 2 GiB.
+The release APK is distributed as a GitHub Release asset named `DIGITracker-latest.apk`, not as a Vercel build file. The Vercel route `/downloads/DIGITracker-latest.apk` redirects to that asset. Keep the same asset name for future releases.
 
-For this build, create a GitHub Release with tag `v1.0.1` and upload `downloads/DIGITracker-latest.apk`. The Vercel route `/downloads/DIGITracker-latest.apk` redirects to the matching asset on the latest GitHub Release. Keep using that exact asset filename for future releases.
+## Deploy on Vercel
 
-The APK currently in `downloads/` is ignored by Git so it is available for upload without becoming part of the website repository.
-
-## Hosting
-
-Import this repository into Vercel as a static project with Framework Preset `Other`, no build command, and output directory `.`. Keep this company site in its own repository; DIGITracker's API repository remains separate. Vercel serves the site over HTTPS.
+Import this repository with the Vite framework preset, build command `npm run build`, and output directory `dist`. These settings are also present in `vercel.json`. Vercel serves the site over HTTPS, and the rewrite keeps existing `.html` paths working in the React app.

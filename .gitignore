@@ -1,2 +1,9 @@
+node_modules/
+dist/
+.vercel/
+.env
+.env.*
+!.env.example
+npm-debug.log*
 downloads/*.apk
-downloads/*.aab
+downloads/*.zip
