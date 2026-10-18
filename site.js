@@ -21,3 +21,18 @@ navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click
   menuButton?.setAttribute('aria-label', 'Open navigation');
   navigation.classList.remove('is-open');
 }));
+
+if (!window.location.pathname.startsWith('/admin')) {
+  const API_BASE = 'https://digitracker-rq61.onrender.com';
+  const path = window.location.pathname.slice(0, 150) || '/';
+  const sendEvent = (eventName) => {
+    const body = JSON.stringify({ event: eventName, path });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(`${API_BASE}/api/v1/site/events`, new Blob([body], { type: 'application/json' }));
+    } else {
+      fetch(`${API_BASE}/api/v1/site/events`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, keepalive: true }).catch(() => {});
+    }
+  };
+  sendEvent('page_view');
+  document.querySelectorAll('a[href*="DIGITracker-latest.apk"]').forEach((link) => link.addEventListener('click', () => sendEvent('apk_download')));
+}

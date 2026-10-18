@@ -21,6 +21,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .skip-link { position: absolute; top: -50px; left: 16px; z-index: 20; padding: 12px 16px; background: var(--lime); border-radius: 8px; }
 .skip-link:focus { top: 12px; }
 
+.cms-content-section { margin: 52px 0; }
+.cms-content-section > h2 { margin-bottom: 24px; }
+.cms-content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; }
+.cms-content-card { min-width: 0; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); }
+.cms-content-image { width: 100%; max-height: 210px; margin: 0 0 18px; display: block; object-fit: cover; border-radius: 12px; background: #e9e8dc; }
+.cms-content-type { color: var(--moss); font: 500 9px var(--mono); letter-spacing: 1px; text-transform: uppercase; }
+.cms-content-card h3 { margin: 10px 0; font: 700 21px/1.2 var(--display); letter-spacing: -.7px; }
+.cms-content-summary, .cms-content-body { color: #70766d; font-size: 12px; line-height: 1.8; white-space: pre-line; }
+.cms-content-body { padding-top: 10px; border-top: 1px solid var(--line); }
+.cms-content-date { display: block; margin: 14px 0; color: var(--muted); font: 10px var(--mono); }
+.cms-content-link { display: inline-block; margin-top: 7px; }
+
 .site-header { height: 84px; max-width: 1440px; margin: auto; padding: 0 7.1%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(29,44,37,.08); position: relative; z-index: 5; }
 .wordmark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-size: 18px; line-height: 1; font-weight: 800; letter-spacing: -1.1px; }
 .wordmark img { width: 205px; height: auto; }

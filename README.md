@@ -10,8 +10,13 @@ A small static website for HideOut Creatives and its product lineup. It has no b
 - `services.html`, `startups.html`, `innovation.html` — Studio work and initiatives
 - `blog.html`, `events.html`, `communities.html`, `ideas.html` — Editorial and community pages
 - `privacy.html` and `terms.html` — Legal pages; both are marked as drafts and need review before public launch
+- `admin/` — Private Google sign-in dashboard for aggregated site activity and published site content (requires backend deployment configuration)
 
 The email and phone shown on the Contacts page are the public contact details provided by the company owner.
+
+## Website admin
+
+The admin dashboard is served at `/admin/`. It calls the DIGITracker backend at `https://digitracker-rq61.onrender.com` for authenticated content management and anonymous aggregate analytics. Access is restricted to `shadowhacktech@gmail.com`. To activate it, set `ADMIN_EMAILS=shadowhacktech@gmail.com`, add the exact Vercel `/admin/` redirect URI and site origin in the Render API environment, and add that redirect URI to the Google Web OAuth client. See `../backend/README.md` for the complete settings. The dashboard accepts an HTTPS image URL; direct file uploads need a separate object storage service.
 
 ## Preview locally
 
