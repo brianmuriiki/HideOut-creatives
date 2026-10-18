@@ -43,6 +43,16 @@
 .daily-bar-track { width: 100%; height: 72px; display: flex; align-items: end; overflow: hidden; border-radius: 7px 7px 3px 3px; background: #f1f1e9; }
 .daily-bar { width: 100%; min-height: 3px; border-radius: 7px 7px 0 0; background: #718770; }
 .daily-count { color: #1d2c25; font-size: 10px; }
+.ratings-card { margin-bottom: 20px; }
+.rating-summary { margin-bottom: 20px; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+.rating-summary-item { padding: 16px; border-radius: 12px; background: #f4f2ec; }
+.rating-summary-item span { display: block; color: #718770; font: 500 9px var(--mono); text-transform: uppercase; }
+.rating-summary-item strong { display: block; margin-top: 8px; color: #1d2c25; font: 600 23px var(--display); }
+.rating-summary-item small { color: #858a7f; font-size: 10px; }
+.rating-comment { padding: 14px 0; border-top: 1px solid #e9e9e1; }
+.rating-comment-head { display: flex; justify-content: space-between; gap: 12px; color: #718770; font: 10px var(--mono); text-transform: uppercase; }
+.rating-comment-stars { margin: 7px 0; color: #9a803c; letter-spacing: 2px; }
+.rating-comment p { margin: 0; color: #59645a; font-size: 12px; line-height: 1.7; white-space: pre-line; overflow-wrap: anywhere; }
 .count-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
 .count-chip { padding: 10px 12px; display: flex; justify-content: space-between; gap: 12px; border-radius: 10px; background: #f4f2ec; color: #566156; font-size: 11px; text-transform: capitalize; }
 .count-chip b { color: #1d2c25; font-family: var(--mono); }
@@ -87,6 +97,7 @@
   .daily-views { gap: 6px; }
   .admin-section-heading { align-items: start; }
   .entry-form-row { grid-template-columns: 1fr; }
+  .rating-summary { grid-template-columns: 1fr; }
 }
 @media (max-width: 440px) {
   .admin-heading { display: grid; }

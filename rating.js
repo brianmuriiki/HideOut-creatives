@@ -1,6 +1,9 @@
+const RATINGS_API = 'https://digitracker-rq61.onrender.com/api/v1/site/ratings';
+
 document.querySelectorAll('.rating-widget').forEach((form) => {
   const status = form.querySelector('[data-rating-status]');
   const choices = [...form.querySelectorAll('.rating-choice')];
+  const button = form.querySelector('[type="submit"]');
   const paintStars = (value) => choices.forEach((choice) => {
     const score = Number(choice.querySelector('input').value);
     choice.classList.toggle('is-lit', score <= value);
@@ -16,27 +19,30 @@ document.querySelectorAll('.rating-widget').forEach((form) => {
     paintStars(selected ? Number(selected.value) : 0);
   });
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
-
+    if (status) status.textContent = 'Sending your rating…';
+    if (button) button.disabled = true;
     const formData = new FormData(form);
-    const rating = formData.get('rating');
-    const feedback = String(formData.get('feedback') || '').trim();
-    const topic = form.dataset.ratingTopic || 'HideOut Creatives';
-    const subject = `HideOut Creatives feedback: ${topic} (${rating}/5)`;
-    const body = [
-      `Rating: ${rating}/5`,
-      `Topic: ${topic}`,
-      `Page: ${window.location.href}`,
-      '',
-      'Feedback:',
-      feedback || '(No written feedback)',
-    ].join('\n');
-
-    if (status) {
-      status.textContent = 'Your email app should open with your rating. Review the message and send it to share your feedback.';
+    try {
+      const response = await fetch(RATINGS_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          topic: form.dataset.ratingTopic || '',
+          rating: Number(formData.get('rating')),
+          feedback: String(formData.get('feedback') || '').trim(),
+        }),
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(payload.error || 'Your rating could not be saved. Please try again.');
+      form.reset();
+      paintStars(0);
+      if (status) status.textContent = 'Thanks for sharing your rating. It has been saved.';
+    } catch (error) {
+      if (status) status.textContent = `${error.message} You can contact us at shadowhacktech@gmail.com.`;
+    } finally {
+      if (button) button.disabled = false;
     }
-
-    window.location.href = `mailto:shadowhacktech@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 });

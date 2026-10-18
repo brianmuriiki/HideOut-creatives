@@ -18,6 +18,8 @@ The email and phone shown on the Contacts page are the public contact details pr
 
 The admin dashboard is served at `/admin/`. It calls the DIGITracker backend at `https://digitracker-rq61.onrender.com` for authenticated content management and anonymous aggregate analytics. Access is restricted to `shadowhacktech@gmail.com`. To activate it, set `ADMIN_EMAILS=shadowhacktech@gmail.com`, add the exact Vercel `/admin/` redirect URI and site origin in the Render API environment, and add that redirect URI to the Google Web OAuth client. See `../backend/README.md` for the complete settings. The dashboard accepts an HTTPS image URL; direct file uploads need a separate object storage service.
 
+Ratings submitted from the Apps, Startups, and Innovation pages are stored anonymously in MongoDB. Their average score and optional comments appear in the admin dashboard; records expire after one year.
+
 ## Preview locally
 
 From this directory, run:

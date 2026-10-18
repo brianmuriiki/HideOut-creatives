@@ -179,10 +179,35 @@ function renderEntries(items) {
 
 async function loadDashboard() {
   dashStatus.textContent = 'Loading website overview…';
-  const [overview, content] = await Promise.all([api('/api/v1/admin/overview'), api('/api/v1/admin/content')]);
+  const [overview, content, ratings] = await Promise.all([api('/api/v1/admin/overview'), api('/api/v1/admin/content'), api('/api/v1/admin/ratings')]);
   renderOverview(overview);
   renderEntries(content.items);
+  renderRatings(ratings);
   dashStatus.textContent = '';
+}
+
+function renderRatings(data) {
+  const summary = $('#rating-summary');
+  summary.replaceChildren();
+  ['digitracker', 'startups', 'innovation'].forEach((topic) => {
+    const score = data.summary[topic];
+    const item = el('div', 'rating-summary-item');
+    item.append(el('span', '', topic), el('strong', '', score ? `★ ${score.average.toFixed(1)} / 5` : '— / 5'), el('small', '', `${number(score?.count)} ratings`));
+    summary.append(item);
+  });
+  const comments = $('#rating-comments');
+  comments.replaceChildren();
+  if (!data.recent.length) {
+    comments.append(el('p', 'admin-empty', 'No written feedback has been submitted yet.'));
+    return;
+  }
+  data.recent.forEach((entry) => {
+    const item = el('article', 'rating-comment');
+    const head = el('div', 'rating-comment-head');
+    head.append(el('span', '', entry.topic), el('time', '', new Date(entry.createdAt).toLocaleDateString()));
+    item.append(head, el('div', 'rating-comment-stars', `${'★'.repeat(entry.rating)}${'☆'.repeat(5 - entry.rating)} (${entry.rating}/5)`), el('p', '', entry.feedback));
+    comments.append(item);
+  });
 }
 
 async function enterDashboard() {
