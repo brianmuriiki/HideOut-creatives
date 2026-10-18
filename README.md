@@ -2,6 +2,17 @@
 
 A small static website for HideOut Creatives and its product lineup. It has no build step or runtime dependencies.
 
+## Pages
+
+- `index.html` — Home
+- `about.html`, `contacts.html`, `careers.html` — Company information
+- `apps.html` and `docs/digitracker.html` — Product catalogue and DIGITracker guide
+- `services.html`, `startups.html`, `innovation.html` — Studio work and initiatives
+- `blog.html`, `events.html`, `communities.html`, `ideas.html` — Editorial and community pages
+- `privacy.html` and `terms.html` — Legal pages; both are marked as drafts and need review before public launch
+
+The email and phone shown on the Contacts page are the public contact details provided by the company owner.
+
 ## Preview locally
 
 From this directory, run:
