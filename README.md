@@ -12,25 +12,14 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000` in a browser.
 
-## Add the Android release
+## Publish the Android APK
 
-Copy the signed release APK into `downloads/` using this stable filename:
+The release APK is larger than Vercel's 100 MB Hobby static-file limit, so do not commit it to this repository. Upload it as a GitHub Release asset named `DIGITracker-latest.apk` instead. Individual GitHub Release assets can be up to 2 GiB.
 
-```text
-downloads/DIGITracker-latest.apk
-```
+For this build, create a GitHub Release with tag `v1.0.1` and upload `downloads/DIGITracker-latest.apk`. The Vercel route `/downloads/DIGITracker-latest.apk` redirects to the matching asset on the latest GitHub Release. Keep using that exact asset filename for future releases.
 
-The product page enables its download button once that file is present. To offer APK update notices inside the app, publish a `version.json` at the site's root with the release's actual Android version code and the direct APK URL:
-
-```json
-{
-  "latest": 7,
-  "url": "https://YOUR-SITE/downloads/DIGITracker-latest.apk"
-}
-```
-
-Set `EXPO_PUBLIC_ANDROID_VERSION_URL` in the EAS production environment to `https://YOUR-SITE/version.json` and build the app again so installed APKs know where to check.
+The APK currently in `downloads/` is ignored by Git so it is available for upload without becoming part of the website repository.
 
 ## Hosting
 
-Deploy this folder as the root of a static site. Keep this company site in its own deployment/repository; the existing GitHub repository is intended to remain backend-only. Use HTTPS and preserve the APK path above for future releases.
+Import this repository into Vercel as a static project with Framework Preset `Other`, no build command, and output directory `.`. Keep this company site in its own repository; DIGITracker's API repository remains separate. Vercel serves the site over HTTPS.

@@ -2,19 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "outputDirectory": ".",
-  "headers": [
+  "redirects": [
     {
       "source": "/downloads/(.*)",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/vnd.android.package-archive"
-        },
-        {
-          "key": "Content-Disposition",
-          "value": "attachment"
-        }
-      ]
+      "destination": "https://github.com/brianmuriiki/HideOut-creatives/releases/latest/download/$1",
+      "permanent": false
     }
   ]
 }
