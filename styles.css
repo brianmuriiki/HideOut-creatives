@@ -261,6 +261,7 @@ h2 { margin-bottom: 0; font-family: var(--display); font-size: clamp(33px, 4vw, 
 .home-service-grid .card-icon, .service-grid .card-icon, .innovation-grid .card-icon, .community-grid .card-icon { width: 25px; height: 25px; display: block; margin-bottom: 16px; color: var(--forest); }
 .contact-details a { gap: 13px; }
 .contact-icon { width: 20px; height: 20px; flex: 0 0 20px; color: var(--forest); }
+.whatsapp-icon { color: #198754; }
 .link-card-icon { width: 24px; height: 24px; color: var(--forest); }
 .product-icon { width: 27px; height: 27px; margin-bottom: 17px; color: var(--lime); }
 .article-icon { width: 22px; height: 22px; display: block; margin-bottom: 16px; color: var(--forest); }
