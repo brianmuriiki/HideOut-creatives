@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <script src="/site.js" defer></script>
+  <script src="/rating.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -32,6 +33,21 @@
         </div><div class="catalog-app-index">01<span>YOUR DAY, IN GOOD COMPANY</span></div>
       </article>
       <section class="content-block"><h2>Built to keep growing</h2><p>We improve products through iteration. Browse the <a href="/docs/digitracker.html">DIGITracker documentation</a> for current feature details and usage notes. New HideOut Creatives apps will be listed here as they become available.</p></section>
+      <form class="rating-widget" data-rating-topic="digitracker">
+        <div class="rating-copy"><p class="eyebrow">YOUR FEEDBACK</p><h2>How useful is DIGITracker to you?</h2><p>Rate the app based on your experience. A short comment can help us understand what to improve.</p></div>
+        <fieldset class="rating-fieldset"><legend>Choose a rating from 1 to 5 stars</legend><div class="rating-stars">
+            <span class="rating-choice"><input id="rating-digitracker-5" type="radio" name="rating" value="5" required aria-label="5 out of 5 stars" /><label for="rating-digitracker-5" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-digitracker-4" type="radio" name="rating" value="4" required aria-label="4 out of 5 stars" /><label for="rating-digitracker-4" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-digitracker-3" type="radio" name="rating" value="3" required aria-label="3 out of 5 stars" /><label for="rating-digitracker-3" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-digitracker-2" type="radio" name="rating" value="2" required aria-label="2 out of 5 stars" /><label for="rating-digitracker-2" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-digitracker-1" type="radio" name="rating" value="1" required aria-label="1 out of 5 stars" /><label for="rating-digitracker-1" aria-hidden="true">★</label></span>
+        </div></fieldset>
+        <label class="rating-comment-label" for="feedback-digitracker">What shaped your rating? <span>Optional</span></label>
+        <textarea id="feedback-digitracker" name="feedback" rows="3" maxlength="1200" placeholder="Share a short note. Please don’t include private or sensitive information."></textarea>
+        <button class="button button-dark rating-submit" type="submit">Share rating <span aria-hidden="true">↗</span></button>
+        <p class="rating-disclosure">This website does not store ratings. The button opens an email draft; your rating is shared only if you send it.</p>
+        <p class="rating-status" data-rating-status aria-live="polite"></p>
+      </form>
       <div class="page-cta"><div><p class="eyebrow">HAVE AN APP IDEA?</p><h2>Let’s explore how to bring it to life.</h2></div><a class="button button-lime" href="/services.html">View app development ↗</a></div>
     </div>
   </main>

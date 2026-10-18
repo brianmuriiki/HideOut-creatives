@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <script src="/site.js" defer></script>
+  <script src="/rating.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,6 +27,21 @@
       <section class="content-block"><h2>Support for the early product journey</h2><p>HideOut Creatives can help founders move from a rough concept to a focused digital product. We work through the problem, the target user, the essential experience, and the best first step—whether that is a landing page, a prototype, or an app MVP.</p><p>We are a product development studio, not an investment fund or accelerator. Our role is to help clarify and build digital experiences.</p></section>
       <section class="step-list"><article><b>01</b><svg class="step-icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-compass"></use></svg><div><h2>Understand the opportunity</h2><p>Define the audience, the problem, and how people handle it today.</p></div></article><article><b>02</b><svg class="step-icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-flask"></use></svg><div><h2>Choose a focused test</h2><p>Decide whether you need a website, prototype, or working product to learn the next thing.</p></div></article><article><b>03</b><svg class="step-icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-rocket"></use></svg><div><h2>Build and get feedback</h2><p>Make a useful first version, show it to the right people, and use what you learn to guide the next iteration.</p></div></article></section>
       <section class="content-block"><h2>Questions to bring</h2><p>Who is the product for? What problem does it solve? What is the smallest version that would be useful? What do you need help with right now? You do not need every answer before you contact us.</p></section>
+      <form class="rating-widget" data-rating-topic="startups">
+        <div class="rating-copy"><p class="eyebrow">YOUR FEEDBACK</p><h2>How helpful is our startup guidance?</h2><p>Rate the clarity and usefulness of our early-stage product approach.</p></div>
+        <fieldset class="rating-fieldset"><legend>Choose a rating from 1 to 5 stars</legend><div class="rating-stars">
+            <span class="rating-choice"><input id="rating-startups-5" type="radio" name="rating" value="5" required aria-label="5 out of 5 stars" /><label for="rating-startups-5" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-startups-4" type="radio" name="rating" value="4" required aria-label="4 out of 5 stars" /><label for="rating-startups-4" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-startups-3" type="radio" name="rating" value="3" required aria-label="3 out of 5 stars" /><label for="rating-startups-3" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-startups-2" type="radio" name="rating" value="2" required aria-label="2 out of 5 stars" /><label for="rating-startups-2" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-startups-1" type="radio" name="rating" value="1" required aria-label="1 out of 5 stars" /><label for="rating-startups-1" aria-hidden="true">★</label></span>
+        </div></fieldset>
+        <label class="rating-comment-label" for="feedback-startups">What shaped your rating? <span>Optional</span></label>
+        <textarea id="feedback-startups" name="feedback" rows="3" maxlength="1200" placeholder="Share a short note. Please don’t include private or sensitive information."></textarea>
+        <button class="button button-dark rating-submit" type="submit">Share rating <span aria-hidden="true">↗</span></button>
+        <p class="rating-disclosure">This website does not store ratings. The button opens an email draft; your rating is shared only if you send it.</p>
+        <p class="rating-status" data-rating-status aria-live="polite"></p>
+      </form>
       <div class="page-cta"><div><p class="eyebrow">EARLY-STAGE PRODUCT?</p><h2>Let’s turn the idea into a plan.</h2></div><a class="button button-lime" href="/contacts.html">Discuss your project ↗</a></div>
     </div>
   </main>

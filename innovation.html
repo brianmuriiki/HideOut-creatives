@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <script src="/site.js" defer></script>
+  <script src="/rating.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,6 +27,21 @@
       <section class="content-block"><h2>Curiosity with a purpose</h2><p>We explore emerging tools and new product ideas, then evaluate them against a practical need. A prototype, workflow experiment, or technical spike is valuable when it helps answer a question—not simply because the technology is new.</p><p>Our current product work gives us hands-on experience with personal productivity, wellness tracking, mobile software, AI-assisted features, and web services. We share learnings as they become useful to others.</p></section>
       <section class="innovation-grid"><article><svg class="card-icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-compass"></use></svg><span>01 / OBSERVE</span><h2>Find the real friction</h2><p>Understand who is affected, what they are trying to accomplish, and where the current experience falls short.</p></article><article><svg class="card-icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-flask"></use></svg><span>02 / EXPLORE</span><h2>Test the possibility</h2><p>Use research, sketches, prototypes, or a small technical experiment to learn before scaling up.</p></article><article><svg class="card-icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-rocket"></use></svg><span>03 / APPLY</span><h2>Turn learning into value</h2><p>Keep what helps, explain the trade-offs, and build a reliable experience around the result.</p></article></section>
       <section class="content-block"><h2>Areas we are interested in</h2><p>Accessible digital services, thoughtful AI assistance, mobile-first experiences, health and fitness tools, and software that helps small teams do meaningful work.</p><p>These are areas of exploration, not claims that every idea is already a product. Follow our <a href="/blog.html">studio notes</a> for work we are ready to share.</p></section>
+      <form class="rating-widget" data-rating-topic="innovation">
+        <div class="rating-copy"><p class="eyebrow">YOUR FEEDBACK</p><h2>How useful is our innovation work?</h2><p>Tell us whether our product experiments and technology ideas feel relevant and useful.</p></div>
+        <fieldset class="rating-fieldset"><legend>Choose a rating from 1 to 5 stars</legend><div class="rating-stars">
+            <span class="rating-choice"><input id="rating-innovation-5" type="radio" name="rating" value="5" required aria-label="5 out of 5 stars" /><label for="rating-innovation-5" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-innovation-4" type="radio" name="rating" value="4" required aria-label="4 out of 5 stars" /><label for="rating-innovation-4" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-innovation-3" type="radio" name="rating" value="3" required aria-label="3 out of 5 stars" /><label for="rating-innovation-3" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-innovation-2" type="radio" name="rating" value="2" required aria-label="2 out of 5 stars" /><label for="rating-innovation-2" aria-hidden="true">★</label></span>
+            <span class="rating-choice"><input id="rating-innovation-1" type="radio" name="rating" value="1" required aria-label="1 out of 5 stars" /><label for="rating-innovation-1" aria-hidden="true">★</label></span>
+        </div></fieldset>
+        <label class="rating-comment-label" for="feedback-innovation">What shaped your rating? <span>Optional</span></label>
+        <textarea id="feedback-innovation" name="feedback" rows="3" maxlength="1200" placeholder="Share a short note. Please don’t include private or sensitive information."></textarea>
+        <button class="button button-dark rating-submit" type="submit">Share rating <span aria-hidden="true">↗</span></button>
+        <p class="rating-disclosure">This website does not store ratings. The button opens an email draft; your rating is shared only if you send it.</p>
+        <p class="rating-status" data-rating-status aria-live="polite"></p>
+      </form>
     </div>
   </main>
   <footer class="site-footer site-footer-pages"><a class="wordmark footer-wordmark" href="/" aria-label="HideOut Creatives home"><img src="/hideout-creatives.svg" width="180" height="40" alt="" /></a><span class="footer-note">Useful ideas, made real.</span><span class="footer-copy">© <span id="year">2026</span> HIDEOUT CREATIVES</span><nav class="footer-links" aria-label="Company links"><div><b>COMPANY</b><a href="/about.html">About</a><a href="/careers.html">Careers</a><a href="/startups.html">Startups</a><a href="/communities.html">Communities</a></div><div><b>EXPLORE</b><a href="/apps.html">Our apps</a><a href="/services.html">Services</a><a href="/innovation.html">Innovation</a><a href="/events.html">Events</a><a href="/blog.html">Blog</a><a href="/ideas.html">Idea suggestions</a></div><div><b>SUPPORT & LEGAL</b><a href="/docs/digitracker.html">DIGITracker docs</a><a href="/contacts.html">Contacts</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms and conditions</a></div></nav></footer>
