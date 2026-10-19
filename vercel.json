@@ -5,8 +5,13 @@
   "outputDirectory": "dist",
   "redirects": [
     {
-      "source": "/downloads/:file",
-      "destination": "https://github.com/brianmuriiki/HideOut-creatives/releases/latest/download/:file",
+      "source": "/downloads/DIGITracker-latest.apk",
+      "destination": "https://github.com/brianmuriiki/HideOut-creatives/releases/latest/download/DIGITracker-latest.apk",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/Ziba-latest.apk",
+      "destination": "https://github.com/brianmuriiki/Ziba-enterprises/releases/latest/download/Ziba-latest.apk",
       "permanent": false
     }
   ],
