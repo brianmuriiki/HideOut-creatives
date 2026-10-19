@@ -154,7 +154,7 @@ export default function HomePage() {
             </div>
             <p className={"section-intro"}>
               {
-                "Our products start with everyday needs. DIGITracker is the first app in a growing collection of useful digital tools."
+                "Our products start with everyday needs. Explore DIGITracker for your daily routines and Ziba for a more local marketplace."
               }
             </p>
           </div>
@@ -235,10 +235,10 @@ export default function HomePage() {
             </div>
           </article>
           <div className={"app-shelf-heading"}>
-            <p className={"eyebrow"}>{"ON THE WAY"}</p>
-            <span>{"More apps are in the works"}</span>
+            <p className={"eyebrow"}>{"ALSO AVAILABLE"}</p>
+            <span>{"A marketplace made for Kenya"}</span>
           </div>
-          <div className={"app-shelf"} aria-label={"Apps in development"}>
+          <div className={"app-shelf"} aria-label={"Other available apps"}>
             <article className={"coming-app-card"}>
               <span className={"coming-app-icon"} aria-hidden={"true"}>
                 {"\u2733"}
@@ -246,20 +246,23 @@ export default function HomePage() {
               <div>
                 <span className={"coming-app-status"}>
                   <i></i>
-                  {" IN DEVELOPMENT"}
+                  {" ANDROID APP AVAILABLE"}
                 </span>
-                <h3>{"What\u2019s next?"}</h3>
+                <h3>{"Ziba Marketplace"}</h3>
                 <p>
                   {
-                    "We\u2019re exploring new ideas for thoughtful tools. The next app will appear here when it\u2019s ready."
+                    "Find local products, homes, and services. Save listings and connect with sellers from your phone."
                   }
                 </p>
+                <a className={"text-link"} href={"/downloads/Ziba-latest.apk"}>
+                  {"Download Ziba for Android \u2197"}
+                </a>
               </div>
               <span className={"coming-app-number"}>{"HC\u2014002"}</span>
             </article>
             <p className={"app-shelf-note"}>
               {
-                "One studio, many useful ideas. Check back as the collection grows."
+                "A growing collection of useful products from HideOut Creatives."
               }
             </p>
           </div>

@@ -23,7 +23,7 @@ export default function AppsPage() {
                 aria-hidden={"true"}
                 focusable={"false"}
               >
-                <use href={"/icons.svg#icon-activity"}></use>
+                <use href={"/icons.svg#icon-globe"}></use>
               </svg>
               <span className={"article-meta"}>
                 {"HC\u2014001 \u00b7 PERSONAL PLANNING & WELLNESS"}
@@ -65,6 +65,50 @@ export default function AppsPage() {
             <div className={"catalog-app-index"}>
               {"01"}
               <span>{"YOUR DAY, IN GOOD COMPANY"}</span>
+            </div>
+          </article>
+          <article className={"catalog-app"}>
+            <div className={"catalog-app-copy"}>
+              <svg
+                className={"product-icon"}
+                aria-hidden={"true"}
+                focusable={"false"}
+              >
+                <use href={"/icons.svg#icon-activity"}></use>
+              </svg>
+              <span className={"article-meta"}>
+                {"HC\u2014002 \u00b7 LOCAL PRODUCTS, HOMES & SERVICES"}
+              </span>
+              <h2>{"Ziba Marketplace"}</h2>
+              <p>
+                {
+                  "Browse products, homes, and services from your phone. Save listings, talk with sellers, and manage your marketplace activity in one place."
+                }
+              </p>
+              <div className={"feature-tags"}>
+                <span>{"Local listings"}</span>
+                <span>{"Homes & services"}</span>
+                <span>{"Saved finds"}</span>
+                <span>{"Seller messaging"}</span>
+              </div>
+              <div className={"hero-actions"}>
+                <a
+                  className={"button button-lime"}
+                  href={"/downloads/Ziba-latest.apk"}
+                >
+                  {"Download Ziba for Android "}
+                  <span aria-hidden={"true"}>{"\u2197"}</span>
+                </a>
+              </div>
+              <p className={"small-print"}>
+                {
+                  "Android APK \u00b7 Install the signed app on your phone. iPhone users can use Ziba on the web."
+                }
+              </p>
+            </div>
+            <div className={"catalog-app-index"}>
+              {"02"}
+              <span>{"GOOD FINDS. GOOD PEOPLE."}</span>
             </div>
           </article>
           <section className={"content-block"}>

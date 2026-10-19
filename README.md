@@ -21,7 +21,7 @@ The dashboard reports aggregate page views and APK download clicks; these are us
 
 ## Publish the Android APK
 
-The release APK is distributed as a GitHub Release asset named `DIGITracker-latest.apk`, not as a Vercel build file. The Vercel route `/downloads/DIGITracker-latest.apk` redirects to that asset. Keep the same asset name for future releases.
+Android APKs are distributed as GitHub Release assets named `DIGITracker-latest.apk` and `Ziba-latest.apk`, not as Vercel build files. The Vercel route `/downloads/:file` redirects to the matching asset in the latest GitHub Release. Upload the APKs to the latest release and keep these exact names for future versions. The Ziba release file is staged locally at `downloads/Ziba-latest.apk`; the APK files are ignored by Git in `downloads/`, so upload release files separately and do not commit them to the source repository.
 
 ## Deploy on Vercel
 
